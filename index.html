@@ -7,13 +7,24 @@
 	<script>
 		$(window).load(function(){
 			jsHist('js-hist', function(){
-				var x = 0;
-				for (var i = 0; i < 5; i++) {
-					setTimeout(function(){
-						x++;
-						console.log(x);
-					}, i * 1000);
+				var divs = 0;
+				for (var i = 0; i < 100; i++) {
+					if(i % 2 == 0){
+						divs++;
+					}
+					if(i % 3 == 0){
+						divs++;
+					}
 				}
+				for (var i = 0; i < 200; i++) {
+					if(i % 2 == 0){
+						divs++;
+					}
+					if(i % 5 == 0){
+						divs++;
+					}
+				}
+				console.log(divs);
 			});
 		});
 	</script>
@@ -21,5 +32,7 @@
 </head>
 <body>
 	<div id="js-hist">
+	</div>
+	<div id="js-hist-2">
 	</div>
 </body>
