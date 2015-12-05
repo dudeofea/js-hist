@@ -37,13 +37,13 @@ body, html {
   border: 0;
   padding: 0;
   margin: 0;
-  background-color: #C2C1C2; }
+  background-color: #F4D8CD; }
 
 #js-hist {
-  background-color: #F7F7FF;
+  background-color: #3A2E39;
   margin: 40px;
   font-family: monospace;
-  color: #070600;
+  color: #F4D8CD;
   position: relative;
   z-index: 1; }
   #js-hist .code-line {
@@ -51,11 +51,13 @@ body, html {
   #js-hist .code-line span {
     z-index: 20;
     display: block;
-    width: 100%; }
+    width: 100%;
+    white-space: pre;
+    unicode-bidi: embed; }
   #js-hist .code-line .back {
     content: '<div class="back"></div>';
     position: absolute;
-    background-color: #EA526F;
+    background-color: #1E555C;
     top: 0;
     left: 0;
     width: 100%;
