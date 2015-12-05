@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Histogram</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js-hist.js"></script>
+	<script>
+		$(window).load(function(){
+			jsHist('js-hist', function(){
+				var x = 0;
+				for (var i = 0; i < 5; i++) {
+					setTimeout(function(){
+						x++;
+						console.log(x);
+					}, i * 1000);
+				}
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+	<div id="js-hist">
+	</div>
+</body>
