@@ -12,5 +12,4 @@ color palette: https://coolors.co/app/3a2e39-1e555c-f4d8cd-edb183-f15152
 Just open index.html in a browser and you'll see what's going on
 
 What's missing:
-- better indenting
 - reflection (ability to run this on itself)

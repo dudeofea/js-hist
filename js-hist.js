@@ -23,6 +23,20 @@ function jsHist(elem_id, fn){
 			all.childNodes[i+1].childNodes[1].setAttribute("style", "opacity: "+(counts[i]/max));
 		}
 	}
+	// -- indent lines properly (only shifts the code until it lines up left)
+	var min_indent = 1000;	//ridiculous number
+	//skip first line ("function(....")
+	var tab_re = /\s*/;
+	for (var i = 1; i < lines.length; i++) {
+		var match = tab_re.exec(lines[i])
+		if(match[0].length < min_indent){
+			min_indent = match[0].length;
+		}
+	}
+	//remove that many whitespace characters
+	for (var i = 1; i < lines.length; i++) {
+		lines[i] = lines[i].substring(min_indent);
+	}
 	// -- add line increments to function and add to source viewer
 	var code_viewer = document.getElementById(elem_id);
 	var add_line = function(text){
