@@ -7,26 +7,14 @@
 	<script>
 		$(window).load(
 			function(){
-			var f = jsHist('js-hist', function(a, b){
-				//a comment
-				if(a%5 == 0){
-					//console.log(a);
+			f = jsHist('js-hist', function(button){
+				if(button == 1){
+					console.log('button 1 was pressed');
 				}
-				if(a%3 == 0){
-					//console.log(a);
-				}
-				if(b%5 == 0){
-					//console.log(b);
-				}
-				if(b%3 == 0){
-					//console.log(b);
+				if(button == 2){
+					console.log('button 2 was pressed');
 				}
 			});
-			for (var i = 0; i < 30; i++) {
-				for (var j = 0; j < 30; j++) {
-					f(i, j);
-				}
-			}
 		});
 	</script>
 	<link rel="stylesheet" type="text/css" href="index.css"/>
@@ -34,6 +22,6 @@
 <body>
 	<div id="js-hist">
 	</div>
-	<div id="js-hist-2">
-	</div>
+	<input type="submit" onclick="f(1)" value="button 1"/>
+	<input type="submit" onclick="f(2)" value="button 2"/>
 </body>
