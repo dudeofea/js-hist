@@ -13,3 +13,4 @@ Just open index.html in a browser and you'll see what's going on
 
 What's missing:
 - reflection (ability to run this on itself)
+- a decay option so we can see recent changes
