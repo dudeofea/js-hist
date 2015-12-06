@@ -3,6 +3,7 @@ function jsHist(elem_id, fn){
 	lines = fn.toString().split('\n');
 	//create array of zeroes
 	var counts = Array.apply(null, Array(lines.length)).map(Number.prototype.valueOf, 0);
+	// -- function to increment lines numbers
 	var max = 0;
 	var incLine = function(line_no){
 		//increment the counts
@@ -46,5 +47,16 @@ function jsHist(elem_id, fn){
 		lines[i] = 'incLine('+i+');'+lines[i];
 	}
 	new_fn = lines.join('\n');
-	eval("var f = "+new_fn+"; f()");
+	// -- convert back to function and return
+	var funcReg = /function *\(([^()]*)\)[ \n\t]*{([\s\S]*)}/gmi;
+	var match = funcReg.exec(new_fn);
+	var args = match[1].split(',')
+	args.push('incLine');
+	var ret_fn = Function(args, match[2]);
+	var wrapper_fn = function(){
+		var args = Array.prototype.slice.call(arguments);
+		args.push(incLine);
+		ret_fn.apply(this, args)
+	}
+	return wrapper_fn;
 }

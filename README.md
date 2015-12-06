@@ -14,4 +14,3 @@ Just open index.html in a browser and you'll see what's going on
 What's missing:
 - better indenting
 - reflection (ability to run this on itself)
-- adding functions that run out of scope
